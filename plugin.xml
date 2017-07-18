@@ -1,6 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="com-babyscripts-plugins-aws" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>BabyscriptsAWS</name>
+    <author>Saba Malik</author>
+    <description>Cordova/PhoneGap Plugin for calling aws service</description>
+
+    <license>MIT</license>
+    <keywords>aws</keywords>
+    <repo>https://github.com/saba-m/cordova-aws-plugin.git</repo>
+    <issue>https://github.com/saba-m/cordova-aws-plugin/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=4.0.0" />
+    </engines>
     <js-module name="BabyscriptsAWS" src="www/BabyscriptsAWS.js">
         <clobbers target="BabyscriptsAWS" />
     </js-module>

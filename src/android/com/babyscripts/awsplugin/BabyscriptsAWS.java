@@ -1,4 +1,4 @@
-package com.moduscreate.plugin;
+package com.babyscripts.awsplugin;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;

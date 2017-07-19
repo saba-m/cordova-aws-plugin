@@ -1,0 +1,29 @@
+{
+  "name": "BabyscriptsAWS",
+  "version": "0.0.1",
+  "description": "Cordova/PhoneGap Plugin for calling aws service",
+  "cordova": {
+    "id": "com-babyscripts-plugins-aws",
+    "platforms": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saba-m/cordova-aws-plugin.git"
+  },
+  "keywords": [
+    "aws",
+    "ecosystem:cordova"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=4.0.0"
+    }
+  ],
+  "author": "Saba Malik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saba-m/cordova-aws-plugin/issues"
+  },
+  "homepage": "https://github.com/saba-m/cordova-aws-plugin#readme"
+}

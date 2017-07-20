@@ -1,10 +1,10 @@
 {
-  "name": "BabyscriptsAWS",
+  "name": "cordova-aws-plugin",
   "version": "0.0.1",
   "description": "Cordova/PhoneGap Plugin for calling aws service",
   "cordova": {
     "id": "com-babyscripts-plugins-aws",
-    "platforms": []
+    "platforms": ["android"]
   },
   "repository": {
     "type": "git",

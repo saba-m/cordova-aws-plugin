@@ -23,6 +23,7 @@
         </config-file>
         <source-file src="src/android/com/babyscripts/awsplugin/BabyscriptsAWS.java"
                      target-dir="src/com/babyscripts/awsplugin" />
-        <source-file src="src/android/blood-pressure-publisher.jar" target-dir="src/android" />
+        <!--<source-file src="src/android/com/babyscripts/awsplugin/blood-pressure-publisher.jar" target-dir="libs/" />-->
+        <framework src="com.amazonaws:aws-java-sdk:1.11.158" />
     </platform>
 </plugin>

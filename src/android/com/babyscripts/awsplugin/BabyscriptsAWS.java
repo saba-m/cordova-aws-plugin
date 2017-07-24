@@ -7,9 +7,11 @@ import org.json.JSONObject;
 import org.json.JSONException;
 import android.content.Context;
 import android.widget.Toast;
+/*
 import com.getbabyscripts.BloodPressurePublisher;
 import com.getbabyscripts.DefinedEnvironment;
 import com.getbabyscripts.InternalApiService;
+*/
 
 public class BabyscriptsAWS extends CordovaPlugin {
     @Override
@@ -19,7 +21,7 @@ public class BabyscriptsAWS extends CordovaPlugin {
             CallbackContext callbackContext
     ) throws JSONException {
         if ("echo".equals(action)) {
-            echo(args.getString(0), callbackContext);
+            echo(args.getString(0),args.getString(1),args.getString(2),args.getString(3), callbackContext);
             return true;
         }
 
@@ -27,27 +29,34 @@ public class BabyscriptsAWS extends CordovaPlugin {
     }
 
     private void echo(
-            String msg,
+            String sys,String diasys,String accessToken,String environment,
             CallbackContext callbackContext
     ) {
-        if (msg == null || msg.length() == 0) {
+       /* if (msg == null || msg.length() == 0) {
             callbackContext.error("Empty message!");
-        } else {
-            InternalApiService api = new InternalApiService();
-            api.publishBloodPressure(
-                    new BloodPressurePublisher(
-                            "dijGL0R2mOW94Y6fMlczBPkrnkX8h8woOPngXeG5HFTXlr26EiPB6206RWCcHbvzR",
-                            190,
-                            80
-                    ),
-                    DefinedEnvironment.Staging
-            );
-            Toast.makeText(
+        } else {*/
+        System.out.println("calling the api ");
+        InternalApiService api = new InternalApiService();
+        DefinedEnvironment env = DefinedEnvironment.Prod;
+        if(environment.equals("staging")){
+            env = DefinedEnvironment.Staging;
+        }else if(environment.equals("demo")){
+            env = DefinedEnvironment.Demo;
+        }
+        api.publishBloodPressure(
+                new BloodPressurePublisher(
+                        accessToken,
+                        Integer.parseInt(sys),
+                        Integer.parseInt(diasys)
+                ),
+                env
+        );
+            /*Toast.makeText(
                     webView.getContext(),
                     msg,
                     Toast.LENGTH_LONG
-            ).show();
-            callbackContext.success(msg);
-        }
+            ).show();*/
+        callbackContext.success(accessToken);
+        //}
     }
 }
